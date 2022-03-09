@@ -1,27 +1,36 @@
 <template>
-  <div class="container p-2 mt-2">
-    <h1>HELLo</h1>
+  <div class="container">
+    <Navbar></Navbar>
+    <Login></Login>
+    <Register></Register>
+    <!--  <Carrito></Carrito>-->
+    <!--  <InformacionProductos></InformacionProductos>-->
+    <!--  <Listado></Listado>-->
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Navbar from "@/components/Navbar";
+import Register from "@/components/Register";
+import Login from "@/components/Login";
+// import Carrito from "@/components/Carrito";
+// import InformacionProductos from "@/components/InformacionProductos";
+// import Listado from "@/components/Listado";
+
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    Navbar,
+    Register,
+    Login,
+    // Carrito,
+    // InformacionProductos,
+    // Listado
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
