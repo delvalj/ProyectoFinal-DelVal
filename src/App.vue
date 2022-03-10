@@ -4,7 +4,7 @@
     <Login></Login>
     <Register></Register>
     <!--  <Carrito></Carrito>-->
-    <!--  <InformacionProductos></InformacionProductos>-->
+      <InformacionProductos></InformacionProductos>
     <!--  <Listado></Listado>-->
   </div>
 </template>
@@ -14,7 +14,7 @@ import Navbar from "@/components/Navbar";
 import Register from "@/components/Register";
 import Login from "@/components/Login";
 // import Carrito from "@/components/Carrito";
-// import InformacionProductos from "@/components/InformacionProductos";
+import InformacionProductos from "@/components/InformacionProductos.vue";
 // import Listado from "@/components/Listado";
 
 
@@ -25,7 +25,7 @@ export default {
     Register,
     Login,
     // Carrito,
-    // InformacionProductos,
+    InformacionProductos,
     // Listado
   }
 }
