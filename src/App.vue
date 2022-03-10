@@ -3,30 +3,31 @@
     <Navbar></Navbar>
     <Login></Login>
     <Register></Register>
-    <!--  <Carrito></Carrito>-->
       <InformacionProductos></InformacionProductos>
-    <!--  <Listado></Listado>-->
+      <Listado></Listado>
+      <Carrito></Carrito>
+
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
-import Register from "@/components/Register";
-import Login from "@/components/Login";
-// import Carrito from "@/components/Carrito";
+import Navbar from "@/components/Navbar.vue";
+import Register from "@/components/Register.vue";
+import Login from "@/components/Login.vue";
+import Carrito from "@/components/Carrito.vue";
 import InformacionProductos from "@/components/InformacionProductos.vue";
-// import Listado from "@/components/Listado";
+import Listado from "@/components/Listado.vue";
 
 
 export default {
   name: 'App',
-  components: {
+  components : {
     Navbar,
+    InformacionProductos,
     Register,
     Login,
-    // Carrito,
-    InformacionProductos,
-    // Listado
+    Carrito,
+    Listado
   }
 }
 </script>

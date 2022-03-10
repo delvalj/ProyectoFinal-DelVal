@@ -1,19 +1,18 @@
 <template>
   <section class="mt-5 p-4 bg-light col-12">
-    <b-row cols="4">
+      <b-row cols="4">
       <b-col v-for="producto in productos" :key="producto.id">
         <b-card
             :title=producto.tituloProducto
             :img-src=producto.imgProducto
-
             img-top
-            :tag="article"
+            tag="article"
             style="max-width: 20rem;"
             class="mb-2"
         >
-
           <b-card-text>
             {{ producto.descripcionProducto }}
+            {{ producto.precio }}
           </b-card-text>
           <b-button href="#" variant="dark">COMPRAR</b-button>
         </b-card>
@@ -26,6 +25,7 @@
 <script>
 export default {
   name: "InformacionProductos",
+
   data() {
     return {
       productos: [{
@@ -39,7 +39,7 @@ export default {
 
         {
           id: 2,
-          tituloProducto: 'titulo del producto 2 ',
+          tituloProducto: 'titulo del producto 2',
           imgProducto: 'https://picsum.photos/600/300/?image=254',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
               "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -82,7 +82,6 @@ export default {
           precio: 725
         },
       ]
-
     }
   },
 
