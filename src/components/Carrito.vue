@@ -1,12 +1,11 @@
 <template>
-
-
   <div class="mt-4">
     <h4 class="text-uppercase text-center m-2">Carrito</h4>
-    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3 p-5">
-      <b-card-title class="text-center"> HOLA</b-card-title>
+
+    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3 p-5" v-for="product in carrito" :key="product.id">
+      <b-card-title class="text-center"> {{ product.titulo }}</b-card-title>
       <b-card-text class="text-center p-2">
-        Some quick example text to build on the card and make up the bulk of the card's content.
+        {{ product.precio }}
       </b-card-text>
 
       <div class="quantity-toggle text-center">
@@ -16,7 +15,7 @@
       </div>
 
       <b-card-text class="text-center p-2 fw-bold mt-3">
-        Total: $$$$$
+        Total: ${{ product.precio*quantity }}
       </b-card-text>
 
       <b-card-text class="text-center m-4">
@@ -26,17 +25,20 @@
         <button class="h3 p-3 m-2">
           Modificar
         </button>
-
       </b-card-text>
-
     </b-card>
   </div>
-
 </template>
 
 <script>
 export default {
   name: "Carrito",
+  props: {
+    carrito: {
+      type: Array,
+      default: () => []
+    },
+  },
   data() {
     return {
       quantity: 1
