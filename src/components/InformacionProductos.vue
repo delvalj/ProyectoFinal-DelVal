@@ -10,12 +10,15 @@
             style="max-width: 20rem;"
             class="mb-2"
         >
-          <b-card-text>
+          <b-card-text style="height: 8rem; overflow: hidden">
             {{ producto.descripcionProducto }}
-            {{ producto.precio }}
           </b-card-text>
 
-          <b-button href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR </b-button>
+          <b-card-text >
+            Precio: ${{ producto.precio }}
+          </b-card-text>
+
+          <b-button href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR</b-button>
         </b-card>
 
       </b-col>

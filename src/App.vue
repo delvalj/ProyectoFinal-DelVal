@@ -53,7 +53,7 @@ export default {
           id: 2,
           tituloProducto: 'titulo del producto 3',
           imgProducto: 'https://picsum.photos/600/300/?image=253',
-          descripcionProducto: "Lorem ipsum dolor sit amet, " +
+          descripcionProducto: "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet " +
               "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
           precio: 1700
         },
@@ -80,7 +80,7 @@ export default {
           id: 5,
           tituloProducto: 'titulo del producto 6',
           imgProducto: 'https://picsum.photos/600/300/?image=259',
-          descripcionProducto: "Lorem ipsum dolor sit amet, " +
+          descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
               "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
           precio: 725
         },
