@@ -15,7 +15,7 @@
             {{ producto.precio }}
           </b-card-text>
 
-          <b-button href="#" variant="dark" @click="enviarCarrito">COMPRAR </b-button>
+          <b-button href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR </b-button>
         </b-card>
 
       </b-col>
@@ -39,10 +39,12 @@ export default {
     }
   },
   methods: {
-    enviarCarrito() {
+    enviarCarrito(id) {
       const nuevo = {
-        titulo: this.arrayProductos[0].tituloProducto,
-        precio: this.arrayProductos[0].precio,
+        titulo: this.arrayProductos[id].tituloProducto,
+        descripcion: this.arrayProductos[id].descripcionProducto,
+        precio: this.arrayProductos[id].precio,
+
       }
 
       this.$emit("nuevo", nuevo)

@@ -2,10 +2,11 @@
   <div class="mt-4">
     <h4 class="text-uppercase text-center m-2">Carrito</h4>
 
-    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3 p-5" v-for="product in carrito" :key="product.id">
+    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3 p-5"
+            v-for="product in carrito" :key="product.id">
       <b-card-title class="text-center"> {{ product.titulo }}</b-card-title>
       <b-card-text class="text-center p-2">
-        {{ product.precio }}
+        {{ product.descripcion }}
       </b-card-text>
 
       <div class="quantity-toggle text-center">
@@ -15,7 +16,7 @@
       </div>
 
       <b-card-text class="text-center p-2 fw-bold mt-3">
-        Total: ${{ product.precio*quantity }}
+        Total: ${{ product.precio * quantity }}
       </b-card-text>
 
       <b-card-text class="text-center m-4">

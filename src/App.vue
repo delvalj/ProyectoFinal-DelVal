@@ -32,7 +32,7 @@ export default {
     return {
       productos: [
           {
-        id: 1,
+        id: 0,
         tituloProducto: 'titulo del producto 1',
         imgProducto: 'https://picsum.photos/600/300/?image=555',
         descripcionProducto: "Lorem ipsum dolor sit amet, " +
@@ -41,7 +41,7 @@ export default {
       },
 
         {
-          id: 2,
+          id: 1,
           tituloProducto: 'titulo del producto 2',
           imgProducto: 'https://picsum.photos/600/300/?image=254',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
@@ -50,7 +50,7 @@ export default {
         },
 
         {
-          id: 3,
+          id: 2,
           tituloProducto: 'titulo del producto 3',
           imgProducto: 'https://picsum.photos/600/300/?image=253',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
@@ -59,7 +59,7 @@ export default {
         },
 
         {
-          id: 4,
+          id: 3,
           tituloProducto: 'titulo del producto 4',
           imgProducto: 'https://picsum.photos/600/300/?image=252',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
@@ -68,7 +68,7 @@ export default {
         },
 
         {
-          id: 5,
+          id: 4,
           tituloProducto: 'titulo del producto 5',
           imgProducto: 'https://picsum.photos/600/300/?image=251',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
@@ -77,7 +77,7 @@ export default {
         },
 
         {
-          id: 6,
+          id: 5,
           tituloProducto: 'titulo del producto 6',
           imgProducto: 'https://picsum.photos/600/300/?image=259',
           descripcionProducto: "Lorem ipsum dolor sit amet, " +
