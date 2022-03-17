@@ -47,11 +47,9 @@ export default {
         titulo: this.arrayProductos[id].tituloProducto,
         descripcion: this.arrayProductos[id].descripcionProducto,
         precio: this.arrayProductos[id].precio,
-
+        imagenProducto: this.arrayProductos[id].imgProducto
       }
-
       this.$emit("nuevo", nuevo)
-
     }
   }
 }

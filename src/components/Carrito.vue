@@ -2,8 +2,12 @@
   <div class="mt-4">
     <h4 class="text-uppercase text-center m-2">Carrito</h4>
 
-    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3 p-5"
-            v-for="product in carrito" :key="product.id">
+    <b-card
+        v-for="product in carrito" :key="product.id"
+        :img-src="product.imagenProducto"
+        img-alt="Card image"
+        img-left class="mb-3 p-5"
+    >
       <b-card-title class="text-center"> {{ product.titulo }}</b-card-title>
       <b-card-text class="text-center p-2">
         {{ product.descripcion }}
