@@ -92,7 +92,11 @@ export default {
     nuevo(param) {
       this.arrayCarrito.push(param)
       console.log(this.arrayCarrito);
-    }
+    },
+    // eliminar(id){
+    //   this.arrayCarrito.splice(id)
+    //   console.log(this.arrayCarrito)
+    // }
   }
 }
 </script>

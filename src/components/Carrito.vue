@@ -1,12 +1,12 @@
 <template>
   <div class="mt-4">
-    <h4 class="text-uppercase text-center m-2">Carrito</h4>
-
+    <h4 class="text-uppercase text-center m-2 p-3">Carrito</h4>
     <b-card
         v-for="product in carrito" :key="product.id"
         :img-src="product.imagenProducto"
         img-alt="Card image"
-        img-left class="mb-3 p-5"
+        img-left
+        class="mb-3 p-5 shadow-lg "
     >
       <b-card-title class="text-center"> {{ product.titulo }}</b-card-title>
       <b-card-text class="text-center p-2">
@@ -25,7 +25,7 @@
 
       <b-card-text class="text-center m-4">
         <button class="h3 m-2 p-3 ">
-          <b-icon icon="trash"></b-icon>
+          <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
         </button>
         <button class="h3 p-3 m-2">
           Modificar
@@ -59,7 +59,11 @@ export default {
       } else {
         this.quantity--
       }
-    }
+    },
+    // eliminarCarrito(id) {
+    //   this.$emit("eliminar", id)
+    //   console.log("eliminarCarrito")
+    // }
   }
 }
 </script>
