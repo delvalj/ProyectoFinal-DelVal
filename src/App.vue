@@ -1,8 +1,7 @@
 <template>
   <div class="container">
     <Navbar></Navbar>
-    <Login></Login>
-    <Register></Register>
+    <LoginRegister></LoginRegister>
     <InformacionProductos :arrayProductos="productos" @nuevo="nuevo"></InformacionProductos>
     <Listado></Listado>
     <Carrito :carrito="arrayCarrito"></Carrito>
@@ -11,8 +10,9 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-import Register from "@/components/Register.vue";
-import Login from "@/components/Login.vue";
+// import Register from "@/components/Register.vue";
+// import Login from "@/components/Login.vue";
+import LoginRegister from "./Views/LoginRegister";
 import Carrito from "@/components/Carrito.vue";
 import InformacionProductos from "@/components/InformacionProductos.vue";
 import Listado from "@/components/Listado.vue";
@@ -21,10 +21,9 @@ import Listado from "@/components/Listado.vue";
 export default {
   name: 'App',
   components: {
+    LoginRegister,
     Navbar,
     InformacionProductos,
-    Register,
-    Login,
     Carrito,
     Listado
   },
