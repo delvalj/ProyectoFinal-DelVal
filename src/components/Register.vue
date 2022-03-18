@@ -8,7 +8,7 @@
           <div class="card bg-dark text-white shadow-2-strong card-registration" style="border-radius: 15px;">
 
             <div class="card-body p-4 p-md-5">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Formulario de Registro</h3>
 
               <form @submit.prevent="handleSubmit">
 
@@ -97,14 +97,14 @@
                            :class="{ 'is-invalid': submitted && $v.user.confirmPassword.$error }"/>
                     <div v-if="submitted && $v.user.confirmPassword.$error" class="invalid-feedback">
                       <span v-if="!$v.user.confirmPassword.required">Completar Repetir contraseña</span>
-                      <span v-else-if="!$v.user.confirmPassword.sameAsPassword">Las contraseñas deben coincidir!</span>
+                      <span v-else-if="!$v.user.confirmPassword.sameAsPassword">Las Contraseñas Deben Coincidir</span>
                     </div>
                   </div>
 
                 </div>
 
                 <div class="mt-4 pt-2">
-                  <input class="btn btn-primary btn-lg" type="submit" value="Submit"/>
+                  <input class="btn btn-primary btn-lg" type="submit" value="Registrar"/>
                 </div>
 
               </form>

@@ -11,51 +11,49 @@
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                <b-form @submit.stop.prevent="onSubmit">
-                  <b-form-group id="example-input-group-1" label="Email" label-for="example-input-1">
+                <b-form @submit.prevent="handleSubmit">
 
-                    <b-form-input class="form-control form-white mb-4 form-control-lg "
-                                  placeholder="Email"
-                                  id="email"
-                                  name="email"
-                                  v-model="$v.form.email.$model"
-                                  :state="validateEmail('email')"
-                                 >
-<!--                      <input type="email" id="typeEmailX" class="form-control form-control-lg"/>-->
-<!--                      <label class="form-label" for="typeEmailX">Email</label>-->
-                    </b-form-input>
-
-                    <b-form-invalid-feedback
-                        id="input-1-live-feedback"
-                    > Ingrese un Email con el formato (yyy@yy.co)
-                    </b-form-invalid-feedback>
-
-
-
-
-
-
-<!--                    <b-button type="submit" variant="primary">Login</b-button>-->
-
-
-                    <div class="form-outline form-white mb-4">
-                      <input type="password" id="typePasswordX" class="form-control form-control-lg"/>
-                      <label class="form-label" for="typePasswordX">Password</label>
+                  <div class="col-md-12 mb-4 mt-4 pb-2">
+                    <div class="form-group">
+                      <input type="email"
+                             placeholder="Email"
+                             v-model="user.email"
+                             id="logInEmail" name="logInEmail"
+                             class="form-control form-control-lg"
+                             :class="{ 'is-invalid': submitted && $v.user.email.$error }"/>
+                      <div v-if="submitted && $v.user.email.$error" class="invalid-feedback">
+                        <span v-if="!$v.user.email.required">Email Incompleto</span>
+                        <span v-if="!$v.user.email.email">Email is invalid</span>
+                      </div>
                     </div>
+                  </div>
 
+                  <div class="form-group col-md-12 mb-4 mt-4 pb-2">
+                    <input type="password"
+                           v-model="user.password"
+                           placeholder="Contraseña"
+                           id="logInpassword" name="logInpassword"
+                           class="form-control form-control-lg"
+                           :class="{ 'is-invalid': submitted && $v.user.password.$error }"/>
+                    <div v-if="submitted && $v.user.password.$error" class="invalid-feedback">
+                      <span v-if="!$v.user.password.required">Completar Contraseña</span>
+                      <span v-if="!$v.user.password.minLength">La contraseña debe tener al menos 6 caracteres.</span>
+                    </div>
+                  </div>
 
-                  </b-form-group>
+                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
                 </b-form>
 
-                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 
-                <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                  <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                </div>
+<!--                <div class="d-flex justify-content-center text-center mt-4 pt-1">-->
+<!--                  <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>-->
+<!--                  <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>-->
+<!--                  <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>-->
+<!--                </div>-->
 
               </div>
 
@@ -75,49 +73,45 @@
 
 <script>
 import {validationMixin} from "vuelidate";
-import {required, minLength, email} from "vuelidate/lib/validators";
+import {required, minLength, email, sameAs} from "vuelidate/lib/validators";
 
 export default {
   name: "Login",
   mixins: [validationMixin],
   data() {
     return {
-      form: {
-        name: null,
-        email: null
-      }
+      user: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        birthday: ""
+      },
+      submitted: false
     };
   },
   validations: {
-    form: {
-      name: {
-        required,
-        minLength: minLength(3)
-      },
-      email: {
-        required,
-        minLength: minLength(3),
-        email
-      },
+    user: {
+      firstName: {required},
+      lastName: {required},
+      email: {required, email},
+      password: {required, minLength: minLength(6)},
+      confirmPassword: {required, sameAsPassword: sameAs('password')},
+      birthday: {required}
     }
   },
   methods: {
-    validateState(name) {
-      const {$dirty, $error} = this.$v.form[name];
-      return $dirty ? !$error : null;
-    },
-    validateEmail(email) {
-      const {$dirty, $error} = this.$v.form[email];
-      return $dirty ? !$error : null;
-    },
+    handleSubmit() {
+      this.submitted = true;
 
-
-    onSubmit() {
-      this.$v.form.$touch();
-      if (this.$v.form.$anyError) {
+      // stop here if form is invalid
+      this.$v.$touch();
+      if (this.$v.$invalid) {
         return;
       }
-      alert("Form submitted!");
+
+      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
     }
   }
 };
