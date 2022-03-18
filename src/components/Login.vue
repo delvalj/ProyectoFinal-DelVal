@@ -11,15 +11,41 @@
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                  <label class="form-label" for="typeEmailX">Email</label>
-                </div>
+                <b-form @submit.stop.prevent="onSubmit">
+                  <b-form-group id="example-input-group-1" label="Email" label-for="example-input-1">
 
-                <div class="form-outline form-white mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                  <label class="form-label" for="typePasswordX">Password</label>
-                </div>
+                    <b-form-input class="form-control form-white mb-4 form-control-lg "
+                                  placeholder="Email"
+                                  id="email"
+                                  name="email"
+                                  v-model="$v.form.email.$model"
+                                  :state="validateEmail('email')"
+                                 >
+<!--                      <input type="email" id="typeEmailX" class="form-control form-control-lg"/>-->
+<!--                      <label class="form-label" for="typeEmailX">Email</label>-->
+                    </b-form-input>
+
+                    <b-form-invalid-feedback
+                        id="input-1-live-feedback"
+                    > Ingrese un Email con el formato (yyy@yy.co)
+                    </b-form-invalid-feedback>
+
+
+
+
+
+
+<!--                    <b-button type="submit" variant="primary">Login</b-button>-->
+
+
+                    <div class="form-outline form-white mb-4">
+                      <input type="password" id="typePasswordX" class="form-control form-control-lg"/>
+                      <label class="form-label" for="typePasswordX">Password</label>
+                    </div>
+
+
+                  </b-form-group>
+                </b-form>
 
                 <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
@@ -43,13 +69,60 @@
       </div>
     </div>
   </section>
+
+
 </template>
 
 <script>
+import {validationMixin} from "vuelidate";
+import {required, minLength, email} from "vuelidate/lib/validators";
+
 export default {
-  name: "Login"
-}
+  name: "Login",
+  mixins: [validationMixin],
+  data() {
+    return {
+      form: {
+        name: null,
+        email: null
+      }
+    };
+  },
+  validations: {
+    form: {
+      name: {
+        required,
+        minLength: minLength(3)
+      },
+      email: {
+        required,
+        minLength: minLength(3),
+        email
+      },
+    }
+  },
+  methods: {
+    validateState(name) {
+      const {$dirty, $error} = this.$v.form[name];
+      return $dirty ? !$error : null;
+    },
+    validateEmail(email) {
+      const {$dirty, $error} = this.$v.form[email];
+      return $dirty ? !$error : null;
+    },
+
+
+    onSubmit() {
+      this.$v.form.$touch();
+      if (this.$v.form.$anyError) {
+        return;
+      }
+      alert("Form submitted!");
+    }
+  }
+};
 </script>
+
 
 <style scoped>
 .gradient-custom {
