@@ -1,32 +1,69 @@
 <template>
-  <div class="container">
+  <div id="app">
     <Navbar></Navbar>
-    <LoginRegister></LoginRegister>
-    <InformacionProductos :arrayProductos="productos" @nuevo="nuevo"></InformacionProductos>
-    <Listado></Listado>
-    <Carrito :carrito="arrayCarrito"></Carrito>
+<!--    <div class="container">-->
+<!--      <router-link to="/">Login</router-link> |-->
+<!--      <router-link to="/productos">Productos</router-link>-->
+<!--&lt;!&ndash;      <router-link to="/LoginRegister">LoginRegister</router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;      <router-link to="/InformacionProductos">InformacionProductos</router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;      <router-link to="/Listado">Listado</router-link>&ndash;&gt;-->
+<!--&lt;!&ndash;      <router-link to="/Carrito">Carrito</router-link>&ndash;&gt;-->
+<!--    </div>-->
+    <router-view/>
   </div>
+
+<!--    <div class="container">-->
+<!--      <Navbar></Navbar>-->
+<!--      <LoginRegister></LoginRegister>-->
+<!--      <InformacionProductos :arrayProductos="productos" @nuevo="nuevo"></InformacionProductos>-->
+<!--      <Listado></Listado>-->
+<!--      <Carrito :carrito="arrayCarrito"></Carrito>-->
+<!--    </div>-->
+
 </template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
 // import Register from "@/components/Register.vue";
 // import Login from "@/components/Login.vue";
-import LoginRegister from "./Views/LoginRegister";
-import Carrito from "@/components/Carrito.vue";
-import InformacionProductos from "@/components/InformacionProductos.vue";
-import Listado from "@/components/Listado.vue";
+// import LoginRegister from "./Views/LoginRegister";
+// import Carrito from "@/components/Carrito.vue";
+// import InformacionProductos from "@/components/InformacionProductos.vue";
+// import Listado from "@/components/Listado.vue";
 
 
 export default {
 
   name: 'App',
   components: {
-    LoginRegister,
+    // LoginRegister,
     Navbar,
-    InformacionProductos,
-    Carrito,
-    Listado,
+    // InformacionProductos,
+    // Carrito,
+    // Listado,
 
   },
   data() {
@@ -141,6 +178,6 @@ export default {
 }
 </script>
 
-<style>
 
-</style>
+
+
