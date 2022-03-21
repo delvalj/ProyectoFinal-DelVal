@@ -1,24 +1,8 @@
 <template>
   <div id="app">
     <Navbar></Navbar>
-<!--    <div class="container">-->
-<!--      <router-link to="/">Login</router-link> |-->
-<!--      <router-link to="/productos">Productos</router-link>-->
-<!--&lt;!&ndash;      <router-link to="/LoginRegister">LoginRegister</router-link>&ndash;&gt;-->
-<!--&lt;!&ndash;      <router-link to="/InformacionProductos">InformacionProductos</router-link>&ndash;&gt;-->
-<!--&lt;!&ndash;      <router-link to="/Listado">Listado</router-link>&ndash;&gt;-->
-<!--&lt;!&ndash;      <router-link to="/Carrito">Carrito</router-link>&ndash;&gt;-->
-<!--    </div>-->
-    <router-view/>
+    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
   </div>
-
-<!--    <div class="container">-->
-<!--      <Navbar></Navbar>-->
-<!--      <LoginRegister></LoginRegister>-->
-<!--      <InformacionProductos :arrayProductos="productos" @nuevo="nuevo"></InformacionProductos>-->
-<!--      <Listado></Listado>-->
-<!--      <Carrito :carrito="arrayCarrito"></Carrito>-->
-<!--    </div>-->
 
 </template>
 
@@ -67,7 +51,6 @@ export default {
 
   },
   data() {
-
     return {
       productos: [
         {

@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
 import LoginRegister from "@/Views/LoginRegister";
 import InformacionProductos from "@/components/InformacionProductos";
+import Listado from "@/components/Listado";
+import Carrito from "@/components/Carrito";
+import probando from "@/components/probando";
 
 Vue.use(VueRouter)
 
@@ -18,6 +20,24 @@ const routes = [
     name: 'Productos',
     component: InformacionProductos
   },
+
+  {
+    path: '/listado',
+    name: 'Listado',
+    component: Listado
+  },
+  {
+    path: '/carrito',
+    name: 'Carrito',
+    component: Carrito
+  },
+
+  {
+    path: '/probando',
+    name: 'probando',
+    component: probando
+  },
+
   // {
   //   path: '/productos',
   //   name: 'InformacionProductos',
