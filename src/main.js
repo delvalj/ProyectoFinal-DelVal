@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuelidate from 'vuelidate';
 
+
 // Import Bootstrap
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 

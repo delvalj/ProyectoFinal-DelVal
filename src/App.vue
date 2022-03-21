@@ -19,25 +19,28 @@ import Listado from "@/components/Listado.vue";
 
 
 export default {
+
   name: 'App',
   components: {
     LoginRegister,
     Navbar,
     InformacionProductos,
     Carrito,
-    Listado
+    Listado,
+
   },
   data() {
+
     return {
       productos: [
-          {
-        id: 0,
-        tituloProducto: 'titulo del producto 1',
-        imgProducto: 'https://picsum.photos/600/300/?image=555',
-        descripcionProducto: "Lorem ipsum dolor sit amet, " +
-            "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-        precio: 1500
-      },
+        {
+          id: 0,
+          tituloProducto: 'titulo del producto 1',
+          imgProducto: 'https://picsum.photos/600/300/?image=555',
+          descripcionProducto: "Lorem ipsum dolor sit amet, " +
+              "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          precio: 1500
+        },
 
         {
           id: 1,
@@ -81,7 +84,42 @@ export default {
           imgProducto: 'https://picsum.photos/600/300/?image=259',
           descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
               "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-          precio: 725
+          precio: 3725
+        },
+        {
+          id: 6,
+          tituloProducto: 'titulo del producto 6',
+          imgProducto: 'https://picsum.photos/600/300/?image=273',
+          descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
+              "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          precio: 2725
+        },
+
+        {
+          id: 7,
+          tituloProducto: 'titulo del producto 7',
+          imgProducto: 'https://picsum.photos/600/300/?image=653',
+          descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
+              "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          precio: 1725
+        },
+
+        {
+          id: 8,
+          tituloProducto: 'titulo del producto 8',
+          imgProducto: 'https://picsum.photos/600/300/?image=219',
+          descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
+              "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          precio: 4725
+        },
+
+        {
+          id: 9,
+          tituloProducto: 'titulo del producto 9',
+          imgProducto: 'https://picsum.photos/600/300/?image=321',
+          descripcionProducto: "Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet, " +
+              "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          precio: 72.5
         },
       ],
       arrayCarrito: [],
@@ -95,6 +133,9 @@ export default {
     // eliminar(id){
     //   this.arrayCarrito.splice(id)
     //   console.log(this.arrayCarrito)
+    // },
+    // getProductos() {
+    //
     // }
   }
 }
