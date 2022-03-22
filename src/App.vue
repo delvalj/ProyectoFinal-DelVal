@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar></Navbar>
-    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
+    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo" :estado="estado"/>
   </div>
 
 </template>
@@ -41,6 +41,7 @@ export default {
   },
   data() {
     return {
+      estado: 'login',
       productos: [
         {
           id: 0,
