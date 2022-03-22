@@ -29,7 +29,9 @@
 
         <ul class="navbar-nav mb-2 mb-lg-0 text-white">
           <li class="form-inline my-2 my-lg-0">
-            <b-icon  icon="cart"></b-icon>
+            <router-link  to="carrito"><a href="">
+              <b-icon icon="cart" class="text-white"></b-icon>
+            </a></router-link>
           </li>
         </ul>
 
