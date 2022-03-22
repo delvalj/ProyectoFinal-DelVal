@@ -83,7 +83,7 @@
                            :class="{ 'is-invalid': submitted && $v.user.password.$error }"/>
                     <div v-if="submitted && $v.user.password.$error" class="invalid-feedback">
                       <span v-if="!$v.user.password.required">Completar Contraseña</span>
-                      <span v-if="!$v.user.password.minLength">La contraseña debe tener al menos 6 caracteres.</span>
+                      <span v-if="!$v.user.password.minLength">La Contraseña Debe Tener al Menos 6 Caracteres.</span>
                     </div>
                   </div>
 
@@ -104,14 +104,12 @@
                 </div>
 
                 <div class=" ">
-                  <input class=" mt-4 btn btn-outline-light btn-lg" type="submit" value="Registrar"/>
+                  <input class=" mt-4 btn btn-outline-light btn-lg" type="submit" value="Registrar" @click="signIn"/>
                 </div>
 
                 <div>
                   <p class="mb-0 mt-5">Already Have an Account? <router-link to="login" href="#" class="text-white-50 fw-bold">Log In</router-link></p>
                 </div>
-
-
               </form>
             </div>
           </div>
@@ -123,6 +121,7 @@
 
 <script>
 import {required, email, minLength, sameAs} from "vuelidate/lib/validators";
+import axios from "axios";
 
 export default {
   name: "Register",
@@ -160,6 +159,18 @@ export default {
       }
 
       alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
+    },
+    signIn() {
+      axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/productos', {
+        email: this.email,
+        password: this.password
+      })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
   }
 };

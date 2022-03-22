@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import LoginRegister from "@/Views/LoginView";
-// import InformacionProductos from "@/components/InformacionProductos";
-// import Listado from "@/components/Listado";
+import InformacionProductos from "@/components/InformacionProductos";
+import Listado from "@/components/Listado";
 import Carrito from "@/components/Carrito";
 import probando from "@/components/probando";
 
@@ -33,17 +32,17 @@ const routes = [
         component: RegisterView
     },
 
-    // {
-    //   path: '/productos',
-    //   name: 'Productos',
-    //   component: InformacionProductos
-    // },
-    //
-    // {
-    //   path: '/listado',
-    //   name: 'Listado',
-    //   component: Listado
-    // },
+    {
+      path: '/productos',
+      name: 'Productos',
+      component: InformacionProductos
+    },
+
+    {
+      path: '/listado',
+      name: 'Listado',
+      component: Listado
+    },
     {
         path: '/carrito',
         name: 'Carrito',
