@@ -1,19 +1,19 @@
 <template>
   <div>
     <Login></Login>
-    <Register></Register>
+<!--    <Register></Register>-->
   </div>
 </template>
 
 <script>
 import Login from "@/components/Login";
-import Register from "@/components/Register";
+// import Register from "@/components/Register";
 
 export default {
-  name: "LoginRegister",
+  name: "LoginView",
   components: {
     Login,
-    Register
+    // Register
   },
 }
 </script>

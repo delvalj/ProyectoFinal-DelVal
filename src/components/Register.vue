@@ -103,9 +103,14 @@
 
                 </div>
 
-                <div class="mt-4 pt-2">
-                  <input class="btn btn-primary btn-lg" type="submit" value="Registrar"/>
+                <div class=" ">
+                  <input class=" mt-4 btn btn-outline-light btn-lg" type="submit" value="Registrar"/>
                 </div>
+
+                <div>
+                  <p class="mb-0 mt-5">Already Have an Account? <router-link to="login" href="#" class="text-white-50 fw-bold">Log In</router-link></p>
+                </div>
+
 
               </form>
             </div>

@@ -49,7 +49,7 @@
               </div>
 
               <div>
-                <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>
+                <p class="mb-0 ">Don't have an account? <router-link to="/register" href="#!" class="text-white-50 fw-bold">Sign Up</router-link></p>
               </div>
 
             </div>
