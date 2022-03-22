@@ -1,12 +1,16 @@
 <template>
   <div class="bg-light p-3">
-    <b-list-group class="m-5" v-for="producto in productos" :key="producto.id">
+    <b-list-group class="m-5" v-for="(producto) in productos" :key="producto.id">
       <b-list-group-item >
-        {{ producto[0].tituloProducto }}
+        {{ producto.tituloProducto }}
       </b-list-group-item>
       <b-list-group-item >
-        {{ producto[0].precio }}
+        {{ producto.precio }}
       </b-list-group-item>
+      <b-list-group-item >
+        {{ producto.descripcionProducto }}
+      </b-list-group-item>
+
     </b-list-group>
   </div>
 </template>
@@ -23,7 +27,7 @@ export default {
   },
   created() {
     axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/productos").then((result) => {
-      this.productos.push(result.data)
+      this.productos = (result.data)
       // console.log("result.data " + JSON.stringify(result.data))
       // console.dir("result.dir " + JSON.stringify(result.data))
       console.log("productos array " + JSON.stringify(this.productos))

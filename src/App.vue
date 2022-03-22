@@ -31,24 +31,13 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
-// import Register from "@/components/Register.vue";
-// import Login from "@/components/Login.vue";
-// import LoginRegister from "./Views/LoginRegister";
-// import Carrito from "@/components/Carrito.vue";
-// import InformacionProductos from "@/components/InformacionProductos.vue";
-// import Listado from "@/components/Listado.vue";
 
 
 export default {
 
   name: 'App',
   components: {
-    // LoginRegister,
     Navbar,
-    // InformacionProductos,
-    // Carrito,
-    // Listado,
-
   },
   data() {
     return {
@@ -154,9 +143,7 @@ export default {
     //   this.arrayCarrito.splice(id)
     //   console.log(this.arrayCarrito)
     // },
-    // getProductos() {
-    //
-    // }
+
   }
 }
 </script>
