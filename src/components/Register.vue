@@ -108,7 +108,9 @@
                 </div>
 
                 <div>
-                  <p class="mb-0 mt-5">Already Have an Account? <router-link to="login" href="#" class="text-white-50 fw-bold">Log In</router-link></p>
+                  <p class="mb-0 mt-5">Already Have an Account?
+                    <router-link to="login" href="#" class="text-white-50 fw-bold">Log In</router-link>
+                  </p>
                 </div>
               </form>
             </div>
@@ -151,27 +153,34 @@ export default {
   methods: {
     handleSubmit() {
       this.submitted = true;
-
       // stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
       }
-
       alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
     },
+
     signIn() {
-      axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/productos', {
-        email: this.email,
-        password: this.password
-      })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+      if (this.submitted === true) {
+        axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/Usuarios', {
+          email: this.email,
+          password: this.password,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          birthday: this.birthday,
+        })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+      } else {
+        alert('Debes completar todos los campos')
+      }
     }
+
   }
 };
 </script>

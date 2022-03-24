@@ -49,7 +49,7 @@
               </div>
 
               <div>
-                <p class="mb-0 ">Don't have an account? <router-link to="/register" href="#!" class="text-white-50 fw-bold">Sign Up</router-link></p>
+                <p class="mb-0">Don't have an account? <router-link to="/register" href="#!" class="text-white-50 fw-bold">Sign Up</router-link></p>
               </div>
 
             </div>
@@ -96,14 +96,14 @@ export default {
     handleSubmit() {
       this.submitted = true;
 
-      // stop here if form is invalid
+      // Stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
       }
-
       alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
-    }
+    },
+
   }
 };
 </script>
