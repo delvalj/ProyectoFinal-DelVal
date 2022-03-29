@@ -52,8 +52,6 @@
           <b-card
               header="Header"
               header-tag="header"
-              footer="Card Footer"
-              footer-tag="footer"
               title="Resumen de Compra"
           >
             <b-card-text>El total de tus compras es: </b-card-text>
