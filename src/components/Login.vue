@@ -64,11 +64,17 @@
 
 <script>
 import {validationMixin} from "vuelidate";
-import {required, minLength, email, sameAs} from "vuelidate/lib/validators";
+import {required, minLength, email} from "vuelidate/lib/validators";
+import {mapGetters} from 'vuex'
 
 export default {
   name: "Login",
   mixins: [validationMixin],
+  created() {
+    if(this.getUser) {
+      this.$router.replace('/')
+    }
+  },
   data() {
     return {
       user: {
@@ -84,12 +90,8 @@ export default {
   },
   validations: {
     user: {
-      firstName: {required},
-      lastName: {required},
       email: {required, email},
       password: {required, minLength: minLength(6)},
-      confirmPassword: {required, sameAsPassword: sameAs('password')},
-      birthday: {required}
     }
   },
   methods: {
@@ -101,9 +103,23 @@ export default {
       if (this.$v.$invalid) {
         return;
       }
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
-    },
 
+      this.$store.dispatch('login', this.user)
+    },
+  },
+  computed: {
+    ...mapGetters([
+      'getUser'
+    ]),
+  },
+  watch: {
+    getUser(newVal) {
+      // eslint-disable-next-line no-debugger
+      debugger
+      if(newVal) {
+        this.$router.replace('/')
+      }
+    }
   }
 };
 </script>

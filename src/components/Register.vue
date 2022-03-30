@@ -103,7 +103,7 @@
                 </div>
 
                 <div class=" ">
-                  <input class=" mt-4 btn btn-outline-light btn-lg" type="submit" value="Registrar" @click="signIn"/>
+                  <input class=" mt-4 btn btn-outline-light btn-lg" type="submit" value="Registrar"/>
                 </div>
 
                 <div>
@@ -157,6 +157,7 @@ export default {
       if (this.$v.$invalid) {
         return;
       }
+      this.signIn();
       alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
     },
 

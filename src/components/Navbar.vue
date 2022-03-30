@@ -17,11 +17,11 @@
             <router-link to="listado" class="nav-link active" aria-current="page" href="#">Listado</router-link>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" >
             <router-link to="carrito" class="nav-link active" aria-current="page" href="#">Carrito</router-link>
           </li>
 
-          <li class="nav-item">
+          <li class="nav-item" >
             <router-link to="probando" class="nav-link active" aria-current="page" href="#">probando</router-link>
           </li>
 
@@ -49,3 +49,5 @@ export default {
 <style>
 
 </style>
+
+hacer un boton , ir al setter de user y pasarle null
