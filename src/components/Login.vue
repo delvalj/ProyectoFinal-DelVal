@@ -49,7 +49,7 @@
               </div>
 
               <div>
-                <p class="mb-0 ">Don't have an account? <router-link to="/register" href="#!" class="text-white-50 fw-bold">Sign Up</router-link></p>
+                <p class="mb-0">Don't have an account? <router-link to="/register" href="#!" class="text-white-50 fw-bold">Sign Up</router-link></p>
               </div>
 
             </div>
@@ -64,45 +64,59 @@
 
 <script>
 import {validationMixin} from "vuelidate";
-import {required, minLength, email, sameAs} from "vuelidate/lib/validators";
+import {required, minLength, email} from "vuelidate/lib/validators";
+import {mapGetters} from 'vuex'
 
 export default {
   name: "Login",
   mixins: [validationMixin],
+  created() {
+    if(this.getUser) {
+      this.$router.replace('/')
+    }
+  },
   data() {
     return {
       user: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        birthday: ""
+        // email: "",
+        // password: "",
+        email: "Griffin45@gmail.com",
+        password: "8WQSus_6EfGkWlC",
       },
       submitted: false
     };
   },
   validations: {
     user: {
-      firstName: {required},
-      lastName: {required},
       email: {required, email},
       password: {required, minLength: minLength(6)},
-      confirmPassword: {required, sameAsPassword: sameAs('password')},
-      birthday: {required}
     }
   },
   methods: {
     handleSubmit() {
       this.submitted = true;
 
-      // stop here if form is invalid
+      // Stop here if form is invalid
       this.$v.$touch();
       if (this.$v.$invalid) {
         return;
       }
 
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
+      this.$store.dispatch('login', this.user)
+    },
+  },
+  computed: {
+    ...mapGetters([
+      'getUser'
+    ]),
+  },
+  watch: {
+    getUser(newVal) {
+      // // eslint-disable-next-line no-debugger
+      // debugger
+      if(newVal) {
+        this.$router.replace('/')
+      }
     }
   }
 };

@@ -16,22 +16,17 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "Listado",
   data() {
     return {
-      productos: [],
+      productos: this.$store.state.productos,
     }
   },
   created() {
-    axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/productos").then((result) => {
-      this.productos = (result.data)
-      // console.log("result.data " + JSON.stringify(result.data))
-      // console.dir("result.dir " + JSON.stringify(result.data))
-      console.log("productos array " + JSON.stringify(this.productos))
-    })
+    this.$store.dispatch('getProducts')
   },
   methods: {}
 }
