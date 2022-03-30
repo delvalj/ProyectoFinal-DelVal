@@ -78,12 +78,10 @@ export default {
   data() {
     return {
       user: {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-        birthday: ""
+        // email: "",
+        // password: "",
+        email: "Griffin45@gmail.com",
+        password: "8WQSus_6EfGkWlC",
       },
       submitted: false
     };
@@ -114,8 +112,8 @@ export default {
   },
   watch: {
     getUser(newVal) {
-      // eslint-disable-next-line no-debugger
-      debugger
+      // // eslint-disable-next-line no-debugger
+      // debugger
       if(newVal) {
         this.$router.replace('/')
       }
