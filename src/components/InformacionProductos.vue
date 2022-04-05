@@ -7,7 +7,7 @@
             :img-src=producto.imgProducto
             img-top
             tag="article"
-            style="max-width: 20rem; "
+            style="max-width: 16rem;"
             class="m-3"
         >
           <b-card-text style="height: 8rem; overflow: hidden">

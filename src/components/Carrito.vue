@@ -1,14 +1,11 @@
 <template>
-
   <div class="mt-2 row row-cols-1 row-cols-md-2 g-4">
-
     <div>
-      <div class="m-2 p-4">
+      <div class="m-2 p-2">
         <b-card
             v-for="product in carrito" :key="product.id"
             no-body
             class="overflow-hidden m-2 p-2"
-            style="max-width: 800px;"
         >
           <b-row no-gutters>
             <b-col md="6">
@@ -24,19 +21,14 @@
                   <button @click="decrement()">&mdash;</button>
                   <input class="text-center" type="text" :value="quantity" readonly>
                   <button @click="increment()">&#xff0b;</button>
+
+                  <button class="h3 m-2 p-3 text-center">
+                    <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
+                  </button>
                 </div>
 
                 <b-card-text class="text-center p-2 fw-bold mt-3">
                   Total: ${{ product.precio * quantity }}
-                </b-card-text>
-
-                <b-card-text class="text-center m-4">
-                  <button class="h3 m-2 p-3">
-                    <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
-                  </button>
-                  <button class="h3 p-3 m-2">
-                    Modificar
-                  </button>
                 </b-card-text>
               </b-card-body>
 
@@ -48,18 +40,23 @@
 
     </div>
     <div>
-      <div class="m-2 p-4">
-          <b-card
-              header="Header"
-              header-tag="header"
-              title="Resumen de Compra"
-          >
-            <b-card-text>El total de tus compras es: </b-card-text>
+      <div
+          class="m-2 p-4"
+          v-for="product in carrito" :key="product.id"
+      >
+        <b-card
+            header="Header"
+            header-tag="header"
+            title="Resumen de Compra"
+        >
+          <b-card-text>Productos:  {{product.titulo}}</b-card-text>
+          <b-card-text>El total de tus compras es:  {{product.precio*quantity}}</b-card-text>
 
-            <b-button href="#" variant="danger">Pagar</b-button>
-          </b-card>
+          <b-button href="#" variant="danger">Pagar</b-button>
+        </b-card>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -74,7 +71,7 @@ export default {
   },
   data() {
     return {
-      quantity: 1
+      quantity: 1,
     }
   },
   methods: {
@@ -89,7 +86,7 @@ export default {
       }
     },
     // eliminarCarrito(id) {
-    //   this.$emit("eliminar", id)
+    //   this.$emit("elimino", id)
     //   console.log("eliminarCarrito")
     // }
   }

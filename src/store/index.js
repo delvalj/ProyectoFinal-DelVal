@@ -42,11 +42,9 @@ export default new Vuex.Store({
                         console.log("user data " + JSON.stringify(this.user))
                         commit('setUser', u)
                         alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
-
                     } else {
                         commit('setUser', null)
                         alert("Failure :(")
-
                     }
                 })
             } catch (error) {
@@ -66,5 +64,5 @@ export default new Vuex.Store({
             return state.user
         }
     },
-    modules: {}
+    modules: {},
 })

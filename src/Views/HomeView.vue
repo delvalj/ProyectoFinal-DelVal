@@ -8,9 +8,7 @@
         img-width="1024"
         img-height="480"
         controls
-
     >
-
       <b-carousel-slide
           caption-tag="h1"
           caption="Bienvenidos a Nuestra Pagina"

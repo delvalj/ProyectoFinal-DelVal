@@ -4,7 +4,6 @@
     <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
     <!--    <probando></probando>-->
   </div>
-
 </template>
 
 <script>
@@ -12,7 +11,6 @@ import Navbar from "@/components/Navbar.vue";
 // import probando from "@/components/probando";
 
 export default {
-
   name: 'App',
   components: {
     Navbar,
@@ -28,17 +26,24 @@ export default {
       arrayCarrito: [],
     }
   },
+
   computed: {
     showNavbar() {
       const notNavbar = ['Register', 'Login'];
       return !notNavbar.includes(this.$route.name)
     }
   },
+
   methods: {
     nuevo(param) {
       this.arrayCarrito.push(param)
       console.log(this.arrayCarrito);
     },
+
+    // elimino(param) {
+    //   this.arrayCarrito.splice(param)
+    //   console.log(this.arrayCarrito);
+    // }
   }
 }
 </script>
