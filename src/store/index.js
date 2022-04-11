@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         productos: [],
-        user: null
+        user: null,
 
     },
     mutations: {

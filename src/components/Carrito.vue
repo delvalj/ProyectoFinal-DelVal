@@ -41,7 +41,7 @@
     </div>
     <div>
       <div
-          class="m-2 p-4"
+          class="m-2 p-3"
           v-for="product in carrito" :key="product.id"
       >
         <b-card
@@ -51,12 +51,18 @@
         >
           <b-card-text>Productos: {{ product.titulo }}</b-card-text>
           <b-card-text>El total de tus compras es: {{ product.precio * quantity }}</b-card-text>
-          <b-button href="#" variant="danger">Pagar</b-button>
+
+          <!--          Modal -->
+          <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>
+          <b-modal v-model="modalShow">Muchas Gracias por su compra! Vuelva prontos!</b-modal>
+
         </b-card>
       </div>
     </div>
 
   </div>
+
+
 </template>
 
 <script>
@@ -71,6 +77,7 @@ export default {
   data() {
     return {
       quantity: 1,
+      modalShow: false
     }
   },
   methods: {
