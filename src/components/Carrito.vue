@@ -49,9 +49,8 @@
             header-tag="header"
             title="Resumen de Compra"
         >
-          <b-card-text>Productos:  {{product.titulo}}</b-card-text>
-          <b-card-text>El total de tus compras es:  {{product.precio*quantity}}</b-card-text>
-
+          <b-card-text>Productos: {{ product.titulo }}</b-card-text>
+          <b-card-text>El total de tus compras es: {{ product.precio * quantity }}</b-card-text>
           <b-button href="#" variant="danger">Pagar</b-button>
         </b-card>
       </div>
@@ -85,10 +84,10 @@ export default {
         this.quantity--
       }
     },
-    // eliminarCarrito(id) {
-    //   this.$emit("elimino", id)
-    //   console.log("eliminarCarrito")
-    // }
+    eliminarCarrito(id) {
+      this.$emit("elimino", id)
+      console.log("eliminarCarrito")
+    }
   }
 }
 </script>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuelidate from 'vuelidate';
 import store from './store'
+import axios from "axios";
 
 
 // Import Bootstrap
@@ -25,6 +26,7 @@ Vue.use(Vuelidate);
 new Vue({
     router,
     store,
+    axios,
     render: h => h(App)
 }).$mount('#app');
 

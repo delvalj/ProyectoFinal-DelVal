@@ -40,10 +40,11 @@ export default {
       console.log(this.arrayCarrito);
     },
 
-    // elimino(param) {
-    //   this.arrayCarrito.splice(param)
-    //   console.log(this.arrayCarrito);
-    // }
+    elimino(param) {
+      this.arrayCarrito.splice(param)
+      console.log(this.arrayCarrito);
+      window.location.reload()
+    }
   }
 }
 </script>

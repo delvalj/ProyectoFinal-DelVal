@@ -9,6 +9,7 @@ import probando from "@/components/probando";
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
+// import ProductsView from "@/Views/ProductsView";
 
 Vue.use(VueRouter)
 
@@ -32,10 +33,15 @@ const routes = [
         component: RegisterView
     },
 
+    // {
+    //   path: '/productos',
+    //   name: 'Productos',
+    //   component: ProductsView
+    // },
     {
-      path: '/productos',
-      name: 'Productos',
-      component: InformacionProductos
+        path: '/productos',
+        name: 'Productos',
+        component: InformacionProductos
     },
 
     {
