@@ -1,68 +1,80 @@
 <template>
-  <div class="mt-2 row row-cols-1 row-cols-md-2 g-4">
-    <div>
-      <div class="m-2 p-2">
-        <b-card
+  <div>
+    <div class="mt-4" v-show="carrito.length === 0">
+      <div>
+        <h3 class="fst-italic text-uppercase"> Carrito Vacio</h3>
+        <p class="fst-italic">Agregue productos a su carrito :)</p>
+        <b-img class="mb-5" src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
+      </div>
+      <router-link class="text-decoration-none" to="/productos"><b-button class="text-white border p-3 overflow-hidden bg-dark">Redirigirse a Productos</b-button></router-link>
+    </div>
+    <div class="mt-4 fst-italic text-uppercase" v-show="carrito.length !== 0">
+      <h3> Carrito</h3>
+
+    </div>
+    <div class="m-2 row row-cols-1 row-cols-md-2 g-4">
+      <div>
+        <div class="m-2 p-2">
+          <b-card
+              v-for="product in carrito" :key="product.id"
+              no-body
+              class="overflow-hidden m-2 p-2"
+          >
+            <b-row no-gutters>
+              <b-col md="6">
+                <b-card-img :src="product.imagenProducto" alt="Image" class="rounded-0"></b-card-img>
+              </b-col>
+              <b-col md="6">
+                <b-card-body :title=product.titulo>
+                  <b-card-text>
+                    {{ product.descripcion }}
+                  </b-card-text>
+
+                  <div class="quantity-toggle text-center">
+                    <button @click="decrement()">&mdash;</button>
+                    <input class="text-center" type="text" :value="quantity" readonly>
+                    <button @click="increment()">&#xff0b;</button>
+
+                    <button class="h3 m-2 p-3 text-center">
+                      <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
+                    </button>
+                  </div>
+
+                  <b-card-text class="text-center p-2 fw-bold mt-3">
+                    Total: ${{ product.precio * quantity }}
+                  </b-card-text>
+                </b-card-body>
+
+              </b-col>
+            </b-row>
+
+          </b-card>
+        </div>
+
+      </div>
+      <div>
+        <div
+            class="m-2 p-3"
             v-for="product in carrito" :key="product.id"
-            no-body
-            class="overflow-hidden m-2 p-2"
         >
-          <b-row no-gutters>
-            <b-col md="6">
-              <b-card-img :src="product.imagenProducto" alt="Image" class="rounded-0"></b-card-img>
-            </b-col>
-            <b-col md="6">
-              <b-card-body :title=product.titulo>
-                <b-card-text>
-                  {{ product.descripcion }}
-                </b-card-text>
+          <b-card
+              header="Header"
+              header-tag="header"
+              title="Resumen de Compra"
+          >
+            <b-card-text>Productos: {{ product.titulo }}</b-card-text>
+            <b-card-text>El total de tus compras es: {{ product.precio * quantity }}</b-card-text>
 
-                <div class="quantity-toggle text-center">
-                  <button @click="decrement()">&mdash;</button>
-                  <input class="text-center" type="text" :value="quantity" readonly>
-                  <button @click="increment()">&#xff0b;</button>
+            <!--          Modal -->
+            <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>
+            <b-modal v-model="modalShow">Muchas Gracias por su compra! Vuelva prontos!</b-modal>
 
-                  <button class="h3 m-2 p-3 text-center">
-                    <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
-                  </button>
-                </div>
-
-                <b-card-text class="text-center p-2 fw-bold mt-3">
-                  Total: ${{ product.precio * quantity }}
-                </b-card-text>
-              </b-card-body>
-
-            </b-col>
-          </b-row>
-
-        </b-card>
+          </b-card>
+        </div>
       </div>
 
     </div>
-    <div>
-      <div
-          class="m-2 p-3"
-          v-for="product in carrito" :key="product.id"
-      >
-        <b-card
-            header="Header"
-            header-tag="header"
-            title="Resumen de Compra"
-        >
-          <b-card-text>Productos: {{ product.titulo }}</b-card-text>
-          <b-card-text>El total de tus compras es: {{ product.precio * quantity }}</b-card-text>
-
-          <!--          Modal -->
-          <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>
-          <b-modal v-model="modalShow">Muchas Gracias por su compra! Vuelva prontos!</b-modal>
-
-        </b-card>
-      </div>
-    </div>
-
   </div>
-
-
 </template>
 
 <script>
@@ -100,6 +112,7 @@ export default {
 </script>
 
 <style scoped>
+
 
 
 input {

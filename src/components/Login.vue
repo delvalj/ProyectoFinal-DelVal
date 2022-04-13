@@ -80,8 +80,8 @@ export default {
       user: {
         // email: "",
         // password: "",
-        email: "AxlRose@yahoo.com",
-        password: "18Sqz8rdssUjSGS",
+        email: "axl_rose@hotmail.com",
+        password: "wY0pn2vWUlC9FQU",
       },
       submitted: false
     };

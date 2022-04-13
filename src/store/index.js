@@ -43,7 +43,7 @@ export default new Vuex.Store({
                     lastName: this.lastName,
                     birthday: this.birthday,
                 }).then((result) => {
-                    this.user = (result.data)
+                    // this.user = (result.data)
                     console.log("postRegister " + JSON.stringify(this.user))
                     commit('setUser', result.data)
                 })
