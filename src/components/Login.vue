@@ -101,7 +101,6 @@ export default {
       if (this.$v.$invalid) {
         return;
       }
-
       this.$store.dispatch('login', this.user)
     },
   },

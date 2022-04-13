@@ -170,7 +170,6 @@ export default {
         //   lastName: this.lastName,
         //   birthday: this.birthday,
         // })
-
         this.$store.dispatch('postRegister', this.user)
 
             .then(function (response) {

@@ -36,7 +36,7 @@ export default new Vuex.Store({
 
         async postRegister({commit}) {
             try {
-                await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/Usuarios', {
+                await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
                     email: this.email,
                     password: this.password,
                     firstName: this.firstName,
@@ -55,7 +55,7 @@ export default new Vuex.Store({
         async login({commit}, params) {
             try {
                 const queryParams = `?email=${params.email}&password=${params.password}`
-                await axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/Usuarios" + queryParams).then((result) => {
+                await axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios" + queryParams).then((result) => {
                   const u = result.data[0]
                     if (u) {
                         this.user = u

@@ -36,6 +36,7 @@ export default {
 
   methods: {
     nuevo(param) {
+
       this.arrayCarrito.push(param)
       console.log(this.arrayCarrito);
     },
