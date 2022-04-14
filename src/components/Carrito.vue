@@ -1,17 +1,19 @@
 <template>
   <div>
-    <div class="mt-4" v-show="carrito.length === 0">
+
+    <div v-show="carrito.length === 0">
       <div>
-        <h3 class="fst-italic text-uppercase"> Carrito Vacio</h3>
+        <h3 class="fst-italic text-uppercase pseudoTitulo "></h3>
         <p class="fst-italic">Agregue productos a su carrito :)</p>
         <b-img class="mb-5" src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
       </div>
       <router-link class="text-decoration-none" to="/productos"><b-button class="text-white border p-3 overflow-hidden bg-dark">Redirigirse a Productos</b-button></router-link>
     </div>
-    <div class="mt-4 fst-italic text-uppercase" v-show="carrito.length !== 0">
-      <h3> Carrito</h3>
 
+    <div v-show="carrito.length !== 0">
+      <h3 class="fst-italic text-uppercase pseudoTitulo2"></h3>
     </div>
+
     <div class="m-2 row row-cols-1 row-cols-md-2 g-4">
       <div>
         <div class="m-2 p-2">
@@ -112,6 +114,51 @@ export default {
 </script>
 
 <style scoped>
+
+h3 {
+  color: #918696;
+  font-family: 'Raleway', monospace;
+  font-weight: 600;
+}
+
+section {
+  font-family: 'Open Sans', monospace;
+  font-weight: normal;
+}
+
+.pseudoTitulo {
+  margin-top: 10px;
+  padding: 10px;
+  border: 4px dashed #d0d0d0;
+}
+
+.pseudoTitulo::before {
+  content: 'Carrito ';
+  color: #020024;
+}
+
+.pseudoTitulo::after {
+  content: 'Vacio';
+  color: #d0d0d0;
+}
+
+
+.pseudoTitulo2 {
+  margin-top: 10px;
+  padding: 10px;
+  border: 4px dashed #d0d0d0;
+}
+
+.pseudoTitulo2::before {
+  content: 'Tu ';
+  color: #020024;
+}
+
+.pseudoTitulo2::after {
+  content: 'Carrito';
+  color: #d0d0d0;
+}
+
 
 
 
