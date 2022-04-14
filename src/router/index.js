@@ -6,10 +6,12 @@ import Carrito from "@/components/Carrito";
 import probando from "@/components/probando";
 
 
+
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
 import CardHome from "@/components/CardHome";
+import AboutView from "@/Views/AboutView";
 // import ProductsView from "@/Views/ProductsView";
 
 Vue.use(VueRouter)
@@ -34,11 +36,11 @@ const routes = [
         component: RegisterView
     },
 
-    // {
-    //   path: '/productos',
-    //   name: 'Productos',
-    //   component: ProductsView
-    // },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView
+    },
     {
         path: '/productos',
         name: 'Productos',
