@@ -16,7 +16,7 @@
         <ul class="navbar-nav mb-2 mb-lg-0 text-white">
 
           <li class="nav-item dropdown">
-            <router-link to="about" class="nav-link active" aria-current="page" href="#">Sobre Nosotros</router-link>
+            <router-link to="about" class="nav-link active" aria-current="page" href="#">Locales</router-link>
           </li>
 
           <li class="nav-item dropdown">

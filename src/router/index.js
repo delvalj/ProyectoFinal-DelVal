@@ -11,8 +11,7 @@ import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
 import CardHome from "@/components/CardHome";
-import AboutView from "@/Views/AboutView";
-// import ProductsView from "@/Views/ProductsView";
+import LocalesView from "@/Views/LocalesView";
 
 Vue.use(VueRouter)
 
@@ -37,9 +36,9 @@ const routes = [
     },
 
     {
-      path: '/about',
-      name: 'about',
-      component: AboutView
+      path: '/Locales',
+      name: 'LocalesView',
+      component: LocalesView
     },
     {
         path: '/productos',
