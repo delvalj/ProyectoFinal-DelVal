@@ -6,7 +6,6 @@ import Carrito from "@/components/Carrito";
 import probando from "@/components/probando";
 
 
-
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
@@ -16,7 +15,6 @@ import LocalesView from "@/Views/LocalesView";
 Vue.use(VueRouter)
 
 const routes = [
-
     {
         path: '/',
         name: 'Home',
