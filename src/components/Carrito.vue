@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div v-show="carrito.length === 0">
       <div>
         <h3 class="fst-italic text-uppercase pseudoTitulo "></h3>

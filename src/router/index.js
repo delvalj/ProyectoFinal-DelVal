@@ -9,6 +9,7 @@ import probando from "@/components/probando";
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
+import CardHome from "@/components/CardHome";
 // import ProductsView from "@/Views/ProductsView";
 
 Vue.use(VueRouter)
@@ -59,6 +60,12 @@ const routes = [
         path: '/probando',
         name: 'probando',
         component: probando
+    },
+
+    {
+        path: '/cardhome',
+        name: 'cardHome',
+        component: CardHome
     },
 
     // {
