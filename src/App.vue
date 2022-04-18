@@ -2,6 +2,7 @@
   <div id="app">
     <Navbar v-if="showNavbar"></Navbar>
     <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
+    <Footer></Footer>
 
     <!--    <probando></probando>-->
   </div>
@@ -9,6 +10,7 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer";
 
 // import probando from "@/components/probando";
 
@@ -16,6 +18,7 @@ export default {
   name: 'App',
   components: {
     Navbar,
+    Footer
     // probando
   },
   mounted() {
