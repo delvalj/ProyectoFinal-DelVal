@@ -17,8 +17,8 @@
             <b-button class="m-2 p-2 btnHome">Productos</b-button>
           </router-link>
 
-          <router-link to="/about">
-            <b-button class="m-2 p-2 text-white btnHome">Sobre Nosotros</b-button>
+          <router-link to="/locales">
+            <b-button class="m-2 p-2 text-white btnHome">Locales</b-button>
           </router-link>
 
         </div>
