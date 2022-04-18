@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-light">
     <h1 class="pseudoTitulo"></h1>
 
     <div class="container">
@@ -47,6 +47,7 @@
         </b-card>
       </b-card-group>
     </div>
+
   </div>
 </template>
 

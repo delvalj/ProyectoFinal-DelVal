@@ -1,18 +1,18 @@
 <template>
-  <div>
+  <div class="bg-light">
     <h1 class="pseudoTitulo">Productos </h1>
-    <section class="p-4 bg-light col-12">
-      <b-row cols="4">
-        <b-col v-for="producto in productos" :key="producto.id">
+    <div class="container col-12">
+      <b-row>
+        <b-col sm="12" xs="12" lg="4" v-for="producto in productos" :key="producto.id" >
           <b-card
               :title=producto.tituloProducto
               :img-src=producto.imgProducto
               img-top
               tag="article"
-              style="max-width: 16rem;"
+              style=""
               class="m-3"
           >
-            <b-card-text style="height: 8rem; overflow: hidden">
+            <b-card-text style="overflow: hidden">
               {{ producto.descripcionProducto }}
             </b-card-text>
 
@@ -25,7 +25,7 @@
         </b-col>
       </b-row>
 
-    </section>
+    </div>
   </div>
 </template>
 
