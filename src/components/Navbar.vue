@@ -18,7 +18,7 @@
             <router-link to="productos" class="nav-link active" aria-current="page" href="#">Productos</router-link>
           </li>
 
-          <li class="nav-item ">
+          <li class="nav-item">
             <router-link to="carrito" class="nav-link active" aria-current="page">
               <a>
                 <b-icon icon="cart" class="text-white"></b-icon>

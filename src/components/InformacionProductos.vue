@@ -38,6 +38,9 @@ export default {
     //   default: () => []
     // },
   },
+  components: {
+
+  },
   created() {
     this.$store.dispatch('getProducts')
 

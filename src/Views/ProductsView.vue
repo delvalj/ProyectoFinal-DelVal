@@ -1,17 +1,19 @@
 <template>
   <div>
-    <h2>Productos</h2>
-  <InformacionProductos></InformacionProductos>
+    <InformacionProductos></InformacionProductos>
+    <SectionInformacion></SectionInformacion>
   </div>
 </template>
 
 <script>
 import InformacionProductos from "@/components/InformacionProductos";
+import SectionInformacion from "@/components/SectionInformacion";
 
 export default {
   name: "ProductsView",
   components: {
-    InformacionProductos
+    InformacionProductos,
+    SectionInformacion
   },
 
 }

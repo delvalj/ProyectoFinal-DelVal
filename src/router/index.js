@@ -4,6 +4,8 @@ import InformacionProductos from "@/components/InformacionProductos";
 import Listado from "@/components/Listado";
 import Carrito from "@/components/Carrito";
 import probando from "@/components/probando";
+import SectionInformacion from "@/components/SectionInformacion";
+
 
 
 import LoginView from "@/Views/LoginView";
@@ -11,6 +13,7 @@ import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
 import CardHome from "@/components/CardHome";
 import LocalesView from "@/Views/LocalesView";
+import ProductsView from "@/Views/ProductsView";
 
 Vue.use(VueRouter)
 
@@ -67,14 +70,18 @@ const routes = [
         component: CardHome
     },
 
-    // {
-    //   path: '/productos',
-    //   name: 'InformacionProductos',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    // },
+    {
+        path: '/informacion',
+        name: 'informacion',
+        component: SectionInformacion
+    },
+
+    {
+        path: '/products',
+        name: 'products',
+        component: ProductsView
+    },
+
 
 ]
 

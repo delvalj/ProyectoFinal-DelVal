@@ -48,6 +48,9 @@
       </b-card-group>
     </div>
 
+
+    <hr class="mt-5">
+
   </div>
 </template>
 
