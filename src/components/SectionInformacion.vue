@@ -1,9 +1,9 @@
 <template>
-  <div class="container ">
+  <div class="container shadow">
     <div class="m-4">
       <b-card-group class="m-2 p-3">
         <b-card
-            class="m-4 border rounded-3"
+            class="m-4 border rounded-3 shadow "
             border-variant="default"
             header-bg-variant="default"
             header-text-variant="black"
@@ -15,7 +15,7 @@
         </b-card>
 
         <b-card
-            class="m-4 border rounded-3"
+            class="m-4 border rounded-3 shadow"
             border-variant="default"
             header-bg-variant="default"
             header-text-variant="black"
@@ -28,7 +28,7 @@
         </b-card>
 
         <b-card
-            class="m-4 border rounded-3"
+            class="m-4 border rounded-3 shadow"
             border-variant="default"
             header-bg-variant="default"
             header-text-variant="black"

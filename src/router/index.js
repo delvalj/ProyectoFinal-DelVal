@@ -7,7 +7,6 @@ import probando from "@/components/probando";
 import SectionInformacion from "@/components/SectionInformacion";
 
 
-
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
@@ -37,9 +36,9 @@ const routes = [
     },
 
     {
-      path: '/Locales',
-      name: 'LocalesView',
-      component: LocalesView
+        path: '/Locales',
+        name: 'LocalesView',
+        component: LocalesView
     },
     {
         path: '/productos',
@@ -48,9 +47,9 @@ const routes = [
     },
 
     {
-      path: '/listado',
-      name: 'Listado',
-      component: Listado
+        path: '/listado',
+        name: 'Listado',
+        component: Listado
     },
     {
         path: '/carrito',
@@ -82,6 +81,9 @@ const routes = [
         component: ProductsView
     },
 
+    // REDIRECCIONO
+
+    {path: '*', redirect: '/'},
 
 ]
 

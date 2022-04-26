@@ -2,7 +2,7 @@
   <div>
     <div v-show="carrito.length === 0">
       <div>
-        <h3 class="fst-italic text-uppercase pseudoTitulo "></h3>
+        <h1 class="pseudoTitulo"></h1>
         <p class="fst-italic">Agregue productos a su carrito :)</p>
         <b-img class="mb-5" src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
       </div>
@@ -10,7 +10,7 @@
     </div>
 
     <div v-show="carrito.length !== 0">
-      <h3 class="fst-italic text-uppercase pseudoTitulo2"></h3>
+      <h1 class="pseudoTitulo2"></h1>
     </div>
 
     <div class="m-2 row row-cols-1 row-cols-md-2 g-4">
@@ -114,7 +114,7 @@ export default {
 
 <style scoped>
 
-h3 {
+h1 {
   color: #918696;
   font-family: 'Raleway', monospace;
   font-weight: 600;
@@ -122,7 +122,7 @@ h3 {
 
 section {
   font-family: 'Open Sans', monospace;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 .pseudoTitulo {
@@ -151,14 +151,16 @@ section {
 .pseudoTitulo2::before {
   content: 'Tu ';
   color: #020024;
+  font-weight: 600;
+
 }
 
 .pseudoTitulo2::after {
   content: 'Carrito';
   color: #d0d0d0;
+  font-weight: 600;
+
 }
-
-
 
 
 input {
@@ -178,5 +180,6 @@ button {
   font-size: 1rem;
   cursor: pointer;
 }
+
 
 </style>

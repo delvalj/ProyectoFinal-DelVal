@@ -2,10 +2,10 @@
   <div class="bg-light">
     <h1 class="pseudoTitulo"></h1>
 
-    <div class="container">
-      <b-card-group class="m-1 p-4">
-        <b-card title="Restaurante 1" img-src="https://picsum.photos/900/400/?image=163" img-alt="Image" img-top>
-          <b-card-text class="fst-italic">
+    <div class="container fuenteLocales">
+      <b-card-group class="m-1 p-4 ">
+        <b-card class="shadow" title="Restaurante 1" img-src="https://picsum.photos/900/400/?image=163" img-alt="Image" img-top>
+          <b-card-text class="fst-italic ">
             Es un típico restaurante steak-house americano, situado en pleno corazón del barrio de Palermo en la ciudad
             de Buenos Aires. Un sitio ideal para compartir una deliciosa comida, celebrar y degustar una amplia variedad
             de exquisitos platos.
@@ -18,7 +18,7 @@
           </template>
         </b-card>
 
-        <b-card title="Restaurante 2" img-src="https://picsum.photos/900/400/?image=195" img-alt="Image" img-top>
+        <b-card class="shadow" title="Restaurante 2" img-src="https://picsum.photos/900/400/?image=195" img-alt="Image" img-top>
           <b-card-text class="fst-italic">
             Acorde con las últimas tendencias mundiales en grandes centros de compras, La Barraca Mall conjuga un bello
             desarrollo arquitectónico con un entorno de arboledas, espacios verdes y espejos de agua.
@@ -32,7 +32,7 @@
           </template>
         </b-card>
 
-        <b-card title="Restaurante 3" img-src="https://picsum.photos/900/400/?image=192" img-alt="Image" img-top>
+        <b-card class="shadow" title="Restaurante 3" img-src="https://picsum.photos/900/400/?image=192" img-alt="Image" img-top>
           <b-card-text class="fst-italic">
             Se encuentra en la ciudad de Córdoba, en el barrio Cerro de las Rosas, donde dispone de un amplio salón, con
             muy buena luminosidad, y un carácter intenso. Ideal para los que desean comer al aire libre.
@@ -49,7 +49,7 @@
     </div>
 
 
-    <hr class="mt-5">
+<!--    <hr class="mt-5">-->
 
   </div>
 </template>
@@ -65,6 +65,8 @@ export default {
   margin-top: 10px;
   padding: 10px;
   border: 4px dashed #d0d0d0;
+  font-weight: 600;
+
 }
 
 .pseudoTitulo::before {
@@ -77,4 +79,5 @@ export default {
   color: #d0d0d0;
 
 }
+
 </style>

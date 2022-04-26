@@ -1,7 +1,7 @@
 <template>
   <div class="bg-light">
-    <h1 class="pseudoTitulo">Productos </h1>
-    <div class="container col-12">
+    <h1 class="pseudoTitulo">Productos</h1>
+    <div class="container col-12 ">
       <b-row>
         <b-col sm="12" xs="12" lg="4" v-for="producto in productos" :key="producto.id" >
           <b-card
@@ -10,7 +10,7 @@
               img-top
               tag="article"
               style=""
-              class="m-3"
+              class="m-3 shadow"
           >
             <b-card-text style="overflow: hidden">
               {{ producto.descripcionProducto }}
@@ -20,7 +20,7 @@
               Precio: ${{ producto.precio }}
             </b-card-text>
 
-            <b-button href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR</b-button>
+            <b-button class="botonComprar" href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR</b-button>
           </b-card>
         </b-col>
       </b-row>
@@ -95,6 +95,11 @@ section {
   color: #d0d0d0;
 
 }
+
+.botonComprar:hover {
+  background-color: #B23A48;
+}
+
 
 /*h1::before {*/
 /*  content: '';*/
