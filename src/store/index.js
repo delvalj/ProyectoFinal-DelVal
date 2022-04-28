@@ -34,14 +34,10 @@ export default new Vuex.Store({
             }
         },
 
-        async postRegister({commit}) {
+        async postRegister({commit}, user) {
             try {
                 await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
-                    email: this.email,
-                    password: this.password,
-                    firstName: this.firstName,
-                    lastName: this.lastName,
-                    birthday: this.birthday,
+                    user
                 }).then((result) => {
                     // this.user = (result.data)
                     console.log("postRegister " + JSON.stringify(this.user))

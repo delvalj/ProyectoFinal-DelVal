@@ -122,7 +122,7 @@
 
 <script>
 import {required, email, minLength, sameAs} from "vuelidate/lib/validators";
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "Register",
@@ -163,14 +163,14 @@ export default {
 
     signIn() {
       if (this.submitted === true) {
-        // axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/Usuarios', {
-        //   email: this.email,
-        //   password: this.password,
-        //   firstName: this.firstName,
-        //   lastName: this.lastName,
-        //   birthday: this.birthday,
-        // })
-        this.$store.dispatch('postRegister', this.user)
+        axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
+          email: this.user.email,
+          password: this.user.password,
+          firstName: this.user.firstName,
+          lastName: this.user.lastName,
+          birthday: this.user.birthday,
+        })
+        // this.$store.dispatch('postRegister', this.user)
 
             .then(function (response) {
               console.log(response);
