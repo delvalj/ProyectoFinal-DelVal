@@ -1,5 +1,6 @@
 <template>
   <footer class="p-5 bg-dark">
+    <h5 class="m-4">DELICATESSEN</h5>
     Created By <a href="https://www.linkedin.com/in/joaquindelval/"><span> Joaquin del Val</span></a> <br>
     <p>Check out my <a href="https://github.com/delvalj"> Github profile</a></p>
   </footer>
@@ -12,6 +13,9 @@ export default {
 </script>
 
 <style scoped>
+h5  {
+  font-family: 'Oswald', monospace;
+}
 
 span, p , footer {
   font-size: 10px;
@@ -33,6 +37,14 @@ a {
   font-weight: 600;
   font-size: 10px;
 
+}
+
+h5 {
+  color: #2c3e50;
+}
+
+h5:hover {
+  color: white;
 }
 
 a:hover {

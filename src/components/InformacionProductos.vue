@@ -102,7 +102,7 @@ section {
 }
 
 .pseudoTitulo::after {
-  content: 'Los Encuentras Aqui!';
+  content: ' Los Encuentras Aqui!';
   color: #d0d0d0;
 
 }

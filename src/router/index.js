@@ -4,7 +4,6 @@ import InformacionProductos from "@/components/InformacionProductos";
 import Listado from "@/components/Listado";
 import Carrito from "@/components/Carrito";
 import probando from "@/components/probando";
-import SectionInformacion from "@/components/SectionInformacion";
 
 
 import LoginView from "@/Views/LoginView";
@@ -12,7 +11,6 @@ import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
 import CardHome from "@/components/CardHome";
 import LocalesView from "@/Views/LocalesView";
-import ProductsView from "@/Views/ProductsView";
 
 Vue.use(VueRouter)
 
@@ -69,17 +67,7 @@ const routes = [
         component: CardHome
     },
 
-    {
-        path: '/informacion',
-        name: 'informacion',
-        component: SectionInformacion
-    },
 
-    {
-        path: '/products',
-        name: 'products',
-        component: ProductsView
-    },
 
     // REDIRECCIONO
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="vh-100">
+  <div>
     <div v-show="carrito.length === 0">
       <div>
         <h1 class="pseudoTitulo"></h1>
@@ -11,7 +11,7 @@
       </router-link>
     </div>
 
-    <div v-show="carrito.length !== 0">
+    <div  v-show="carrito.length !== 0">
       <h1 class="pseudoTitulo2"></h1>
     </div>
 

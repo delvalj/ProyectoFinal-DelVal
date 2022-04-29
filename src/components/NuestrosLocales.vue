@@ -1,5 +1,5 @@
 <template>
-  <div class="vh-100 bg-light h-100" >
+  <div class="bg-light h-100" >
     <h1 class="pseudoTitulo"></h1>
 
     <div class="container fuenteLocales">
