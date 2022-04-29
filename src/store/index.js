@@ -8,16 +8,17 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         productos: [],
-        user: null
+        user: null,
+
     },
     mutations: {
         setProducts(state, payload) {
             state.productos = payload
-            console.log('set products' + JSON.stringify(this.productos))
+            console.log('setProducts' + JSON.stringify(this.productos))
         },
         setUser(state, payload) {
             state.user = payload
-            console.log('set products' + JSON.stringify(this.user))
+            console.log('setUser' + JSON.stringify(this.user))
         },
     },
     actions: {
@@ -32,21 +33,34 @@ export default new Vuex.Store({
                 console.error(error)
             }
         },
+
+        // async postRegister({commit}, user) {
+        //     try {
+        //         await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
+        //             user
+        //         }).then((result) => {
+        //             // this.user = (result.data)
+        //             console.log("postRegister " + JSON.stringify(this.user))
+        //             commit('setUser', result.data)
+        //         })
+        //     } catch (error) {
+        //         console.error(error)
+        //     }
+        // },
+
         async login({commit}, params) {
             try {
                 const queryParams = `?email=${params.email}&password=${params.password}`
-                await axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/Usuarios" + queryParams).then((result) => {
+                await axios.get("https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios" + queryParams).then((result) => {
                   const u = result.data[0]
                     if (u) {
                         this.user = u
                         console.log("user data " + JSON.stringify(this.user))
                         commit('setUser', u)
-                        alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
-
+                        // alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
                     } else {
                         commit('setUser', null)
                         alert("Failure :(")
-
                     }
                 })
             } catch (error) {
@@ -66,5 +80,5 @@ export default new Vuex.Store({
             return state.user
         }
     },
-    modules: {}
+    modules: {},
 })

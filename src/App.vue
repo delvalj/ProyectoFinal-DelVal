@@ -1,21 +1,23 @@
 <template>
   <div id="app">
     <Navbar v-if="showNavbar"></Navbar>
-    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
+    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo" @elimino="elimino"/>
+    <Footer></Footer>
     <!--    <probando></probando>-->
   </div>
-
 </template>
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer";
+
 // import probando from "@/components/probando";
 
 export default {
-
   name: 'App',
   components: {
     Navbar,
+    Footer
     // probando
   },
   mounted() {
@@ -28,17 +30,26 @@ export default {
       arrayCarrito: [],
     }
   },
+
   computed: {
     showNavbar() {
       const notNavbar = ['Register', 'Login'];
       return !notNavbar.includes(this.$route.name)
     }
   },
+
   methods: {
     nuevo(param) {
       this.arrayCarrito.push(param)
       console.log(this.arrayCarrito);
     },
+
+    elimino(param) {
+      debugger
+      this.arrayCarrito.splice(param)
+      console.log(this.arrayCarrito);
+      // window.location.reload()
+    }
   }
 }
 </script>

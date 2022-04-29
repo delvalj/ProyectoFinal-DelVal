@@ -9,11 +9,12 @@ import probando from "@/components/probando";
 import LoginView from "@/Views/LoginView";
 import RegisterView from "@/Views/RegisterView";
 import HomeView from "@/Views/HomeView";
+import CardHome from "@/components/CardHome";
+import LocalesView from "@/Views/LocalesView";
 
 Vue.use(VueRouter)
 
 const routes = [
-
     {
         path: '/',
         name: 'Home',
@@ -33,15 +34,20 @@ const routes = [
     },
 
     {
-      path: '/productos',
-      name: 'Productos',
-      component: InformacionProductos
+        path: '/Locales',
+        name: 'LocalesView',
+        component: LocalesView
+    },
+    {
+        path: '/productos',
+        name: 'Productos',
+        component: InformacionProductos
     },
 
     {
-      path: '/listado',
-      name: 'Listado',
-      component: Listado
+        path: '/listado',
+        name: 'Listado',
+        component: Listado
     },
     {
         path: '/carrito',
@@ -55,14 +61,17 @@ const routes = [
         component: probando
     },
 
-    // {
-    //   path: '/productos',
-    //   name: 'InformacionProductos',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    // },
+    {
+        path: '/cardhome',
+        name: 'cardHome',
+        component: CardHome
+    },
+
+
+
+    // REDIRECCIONO
+
+    {path: '*', redirect: '/'},
 
 ]
 
