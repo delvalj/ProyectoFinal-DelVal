@@ -34,19 +34,19 @@ export default new Vuex.Store({
             }
         },
 
-        async postRegister({commit}, user) {
-            try {
-                await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
-                    user
-                }).then((result) => {
-                    // this.user = (result.data)
-                    console.log("postRegister " + JSON.stringify(this.user))
-                    commit('setUser', result.data)
-                })
-            } catch (error) {
-                console.error(error)
-            }
-        },
+        // async postRegister({commit}, user) {
+        //     try {
+        //         await axios.post('https://6238c7400a54d2ceab7a0c3e.mockapi.io/usuarios', {
+        //             user
+        //         }).then((result) => {
+        //             // this.user = (result.data)
+        //             console.log("postRegister " + JSON.stringify(this.user))
+        //             commit('setUser', result.data)
+        //         })
+        //     } catch (error) {
+        //         console.error(error)
+        //     }
+        // },
 
         async login({commit}, params) {
             try {
@@ -57,7 +57,7 @@ export default new Vuex.Store({
                         this.user = u
                         console.log("user data " + JSON.stringify(this.user))
                         commit('setUser', u)
-                        alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
+                        // alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.user));
                     } else {
                         commit('setUser', null)
                         alert("Failure :(")

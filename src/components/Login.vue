@@ -1,5 +1,5 @@
 <template>
-  <section class="vh-320 gradient-custom">
+  <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -78,10 +78,8 @@ export default {
   data() {
     return {
       user: {
-        // email: "",
-        // password: "",
-        email: "axl_rose@hotmail.com",
-        password: "wY0pn2vWUlC9FQU",
+        email: "",
+        password: "",
       },
       submitted: false
     };

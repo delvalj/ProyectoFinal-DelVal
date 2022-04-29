@@ -48,7 +48,7 @@ export default {
       debugger
       this.arrayCarrito.splice(param)
       console.log(this.arrayCarrito);
-      window.location.reload()
+      // window.location.reload()
     }
   }
 }

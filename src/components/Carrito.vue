@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="vh-100">
     <div v-show="carrito.length === 0">
       <div>
         <h1 class="pseudoTitulo"></h1>
@@ -33,19 +33,14 @@
                     {{ product.descripcion }}
                   </b-card-text>
 
-                  <div class="quantity-toggle text-center">
-                    <button @click="decrement()">&mdash;</button>
-                    <input class="text-center" type="text" :value="quantity" readonly>
-                    <button @click="increment()">&#xff0b;</button>
-
-                    <button class="h3 m-2 p-3 text-center">
-                      <b-icon icon="trash" @click="eliminarCarrito(product)"></b-icon>
-                    </button>
-
-                  </div>
+<!--                  <div class="quantity-toggle text-center">-->
+<!--                    <button class="h3 m-2 p-3 text-center">-->
+<!--                      <b-icon icon="trash" @click="eliminarCarrito(product)"></b-icon>-->
+<!--                    </button>-->
+<!--                  </div>-->
 
                   <b-card-text class="text-center p-2 fw-bold mt-3">
-                    Total: ${{ product.precio * quantity }}
+                    {{ product.subdescipcion }}
                   </b-card-text>
                 </b-card-body>
 
@@ -63,18 +58,32 @@
 
         >
           <b-card
-              header="Header"
+              class="fw-bold"
+              header="DELICATESSEN"
               header-tag="header"
               title="Resumen de Compra"
           >
-            <b-card-text>Productos:</b-card-text>
+            <b-card-text class="text-decoration-underline">Productos:</b-card-text>
+            <b-card-text class="fst-italic" v-for="product in carrito" :key="product.id"> - {{ product.titulo }} <br>
+              ${{ product.precio }}
+            </b-card-text>
 
-            <b-card-text v-for="product in carrito" :key="product.id"> {{ product.titulo }}</b-card-text>
-
-            <b-card-text>El total de tus compras es:</b-card-text>
-            <b-card-text v-for="product in carrito" :key="product.id">{{ product.precio * quantity }}</b-card-text>
+            <!--            <b-card-text class="text-decoration-underline">{{-->
+            <!--                `El total de tus compras es`-->
+            <!--              }}-->
+            <!--            </b-card-text>-->
+            <!--            <b-card-text v-for="product in carrito" :key="product.id" @click="sumaTotales()">{{-->
+            <!--                product.precio-->
+            <!--              }}-->
+            <!--            </b-card-text>-->
 
             <!--          Modal -->
+                              <div class="quantity-toggle text-center d-inline">
+                                <button class="h3 m-2 p-3 text-center border" title="Borrar Todo">
+                                  <b-icon icon="trash" @click="eliminarCarrito(product)"></b-icon>
+                                </button>
+
+                              </div>
             <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>
             <b-modal v-model="modalShow">Muchas Gracias por su compra! Vuelva prontos!</b-modal>
 
@@ -83,16 +92,17 @@
       </div>
 
     </div>
-      <InfoCarrito></InfoCarrito>
+    <InfoCarrito></InfoCarrito>
   </div>
 
 </template>
 
 <script>
 import InfoCarrito from "@/components/InfoCarrito";
+
 export default {
   name: "Carrito",
-  components:{
+  components: {
     InfoCarrito
   },
   props: {
@@ -104,28 +114,17 @@ export default {
   data() {
     return {
       quantity: 1,
-      modalShow: false
+      modalShow: false,
     }
   },
   methods: {
-    increment() {
-      this.quantity++
-    },
-    decrement() {
-      if (this.quantity === 1) {
-        alert('Negative quantity not allowed')
-      } else {
-        this.quantity--
-      }
-    },
     eliminarCarrito(id) {
       this.$emit("elimino", id)
       console.log("eliminarCarrito")
     },
-    sumaTotal() {
 
-    }
   }
+
 }
 </script>
 

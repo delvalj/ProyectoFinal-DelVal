@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light">
+  <div class="bg-light vh-320">
     <h1 class="pseudoTitulo">Productos</h1>
     <div class="container col-12 ">
       <b-row>
@@ -20,7 +20,7 @@
               Precio: ${{ producto.precio }}
             </b-card-text>
 
-            <b-button class="botonComprar" href="#" variant="dark" @click="enviarCarrito(producto.id)">COMPRAR</b-button>
+            <b-button class="botonComprar" href="#" variant="dark" @click="enviarCarrito(producto.id)" title="Agregar al Carrito">COMPRAR</b-button>
           </b-card>
         </b-col>
       </b-row>
@@ -61,7 +61,8 @@ export default {
         titulo: this.productos[id].tituloProducto,
         descripcion: this.productos[id].descripcionProducto,
         precio: this.productos[id].precio,
-        imagenProducto: this.productos[id].imgProducto
+        imagenProducto: this.productos[id].imgProducto,
+        subdescipcion: this.productos[id].subdescipcion
       }
       this.$emit("nuevo", nuevo)
     }
