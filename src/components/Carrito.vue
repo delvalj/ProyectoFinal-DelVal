@@ -37,8 +37,9 @@
                     <button @click="increment()">&#xff0b;</button>
 
                     <button class="h3 m-2 p-3 text-center">
-                      <b-icon icon="trash" @click="eliminarCarrito(carrito.id)"></b-icon>
+                      <b-icon icon="trash" @click="eliminarCarrito(product)"></b-icon>
                     </button>
+
                   </div>
 
                   <b-card-text class="text-center p-2 fw-bold mt-3">
@@ -53,18 +54,23 @@
         </div>
 
       </div>
-      <div>
+      <div v-if="carrito.length">
         <div
+
             class="m-2 p-3"
-            v-for="product in carrito" :key="product.id"
+
         >
           <b-card
               header="Header"
               header-tag="header"
               title="Resumen de Compra"
           >
-            <b-card-text>Productos: {{ product.titulo }}</b-card-text>
-            <b-card-text>El total de tus compras es: {{ product.precio * quantity }}</b-card-text>
+            <b-card-text>Productos: </b-card-text>
+
+            <b-card-text  v-for="product in carrito" :key="product.id" > {{ product.titulo }}</b-card-text>
+
+            <b-card-text>El total de tus compras es: </b-card-text>
+            <b-card-text v-for="product in carrito" :key="product.id" >{{ product.precio * quantity }}</b-card-text>
 
             <!--          Modal -->
             <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>

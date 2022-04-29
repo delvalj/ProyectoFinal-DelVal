@@ -47,9 +47,10 @@ export default {
   },
   data() {
     return {
-      productos: this.$store.state.productos
+
     }
   },
+
   methods: {
     enviarCarrito(id) {
       const nuevo = {
@@ -59,6 +60,11 @@ export default {
         imagenProducto: this.productos[id].imgProducto
       }
       this.$emit("nuevo", nuevo)
+    }
+  },
+  computed: {
+    productos(){
+      return this.$store.state.productos
     }
   }
 }

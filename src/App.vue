@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar v-if="showNavbar"></Navbar>
-    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo"/>
+    <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo" @elimino="elimino"/>
     <Footer></Footer>
 
     <!--    <probando></probando>-->
@@ -41,12 +41,12 @@ export default {
 
   methods: {
     nuevo(param) {
-
       this.arrayCarrito.push(param)
       console.log(this.arrayCarrito);
     },
 
     elimino(param) {
+      debugger
       this.arrayCarrito.splice(param)
       console.log(this.arrayCarrito);
       window.location.reload()
