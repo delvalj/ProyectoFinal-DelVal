@@ -6,7 +6,9 @@
         <p class="fst-italic">Agregue productos a su carrito :)</p>
         <b-img class="mb-5" src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
       </div>
-      <router-link class="text-decoration-none" to="/productos"><b-button class="text-white border p-3 overflow-hidden bg-dark">Redirigirse a Productos</b-button></router-link>
+      <router-link class="text-decoration-none" to="/productos">
+        <b-button class="text-white border p-3 overflow-hidden bg-dark">Redirigirse a Productos</b-button>
+      </router-link>
     </div>
 
     <div v-show="carrito.length !== 0">
@@ -65,12 +67,12 @@
               header-tag="header"
               title="Resumen de Compra"
           >
-            <b-card-text>Productos: </b-card-text>
+            <b-card-text>Productos:</b-card-text>
 
-            <b-card-text  v-for="product in carrito" :key="product.id" > {{ product.titulo }}</b-card-text>
+            <b-card-text v-for="product in carrito" :key="product.id"> {{ product.titulo }}</b-card-text>
 
-            <b-card-text>El total de tus compras es: </b-card-text>
-            <b-card-text v-for="product in carrito" :key="product.id" >{{ product.precio * quantity }}</b-card-text>
+            <b-card-text>El total de tus compras es:</b-card-text>
+            <b-card-text v-for="product in carrito" :key="product.id">{{ product.precio * quantity }}</b-card-text>
 
             <!--          Modal -->
             <b-button v-model="modalShow" @click="modalShow = !modalShow" href="#" variant="danger">Pagar</b-button>
@@ -81,12 +83,18 @@
       </div>
 
     </div>
+      <InfoCarrito></InfoCarrito>
   </div>
+
 </template>
 
 <script>
+import InfoCarrito from "@/components/InfoCarrito";
 export default {
   name: "Carrito",
+  components:{
+    InfoCarrito
+  },
   props: {
     carrito: {
       type: Array,

@@ -26,10 +26,14 @@
       </b-row>
 
     </div>
+    <SectionInformacion></SectionInformacion>
+
+
   </div>
 </template>
 
 <script>
+import SectionInformacion from "@/components/SectionInformacion";
 export default {
   name: "InformacionProductos",
   props: {
@@ -39,7 +43,7 @@ export default {
     // },
   },
   components: {
-
+    SectionInformacion
   },
   created() {
     this.$store.dispatch('getProducts')

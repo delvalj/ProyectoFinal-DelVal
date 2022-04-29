@@ -1,7 +1,7 @@
 <template>
   <b-navbar class="navbar navbar-expand-lg navbar-dark bg-dark barraNav">
     <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">LOGO</router-link>
+      <router-link class="navbar-brand text-uppercase" to="/">Delicatessen</router-link>
 
       <div class="" id="">
 
