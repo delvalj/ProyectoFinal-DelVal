@@ -3,7 +3,6 @@
     <Navbar v-if="showNavbar"></Navbar>
     <router-view :arrayProductos="productos" :carrito="arrayCarrito" @nuevo="nuevo" @elimino="elimino"/>
     <Footer></Footer>
-
     <!--    <probando></probando>-->
   </div>
 </template>

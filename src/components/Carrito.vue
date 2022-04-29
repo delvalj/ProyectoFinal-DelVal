@@ -113,6 +113,9 @@ export default {
     eliminarCarrito(id) {
       this.$emit("elimino", id)
       console.log("eliminarCarrito")
+    },
+    sumaTotal() {
+
     }
   }
 }
