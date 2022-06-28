@@ -14,8 +14,8 @@
           <!--          <h3 class="">Bienvenidos a Nuestra Web App Oficial</h3>-->
           <p>
             Amantes del buen gusto y sabores exoticos </p>
-          A través de la merienda creamos nuestro propio universo <br> y elegimos con quién compartirlo.
-          <br> Cada receta es un nexo <br> que conecta personas  con <br> sensaciones, momentos, rituales y lugares.
+<!--          A través de la merienda creamos nuestro propio universo <br> y elegimos con quién compartirlo.-->
+<!--          <br> Cada receta es un nexo <br> que conecta personas  con <br> sensaciones, momentos, rituales y lugares.-->
         </b-card-text>
 
         <router-link to="/productos">
